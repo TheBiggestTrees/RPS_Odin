@@ -1,6 +1,8 @@
 let choices = ["Rock", "Paper", "Scissors"];
+let round = 1;
+let playerScore = 0;
+let computerScore = 0;
 
-const playerSelection = prompt("Pick a thing");
 const computerSelection = getComputerChoice();
 
 
@@ -27,11 +29,15 @@ function playRound(playerSelection, computer) {
     } else if (playerSelection.toLowerCase() === "scissors" && computer.toLowerCase() === "paper") {
         console.log('You won! Scissors beats paper.')
     }
+}
 
+function game() {
 
-
-
+    for (round = 1; round <= 5; ++round) {
+        playerSelection = prompt("Lets go")
+        playRound(playerSelection, computerSelection);
+    }
 
 }
 
-playRound(playerSelection, computerSelection)
+game()
