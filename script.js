@@ -3,11 +3,7 @@ let round = 1;
 let playerScore = 0;
 let computerScore = 0;
 
-
-
-
-function getComputerChoice() {
-    
+function getComputerChoice() { 
     let computer = choices[(Math.floor(Math.random() * choices.length))];
     return computer;
 }
@@ -37,16 +33,32 @@ function playRound(playerSelection, computer) {
     }
 }
 
-function game() {
-
-    for (round = 1; round <= 5; ++round) {
-        playerSelection = prompt("Lets play Rock, Paper, Scissors!");
+function rock() {
+        playerSelection = choices[0]
         let computerSelection = getComputerChoice();
         playRound(playerSelection, computerSelection);
         console.log("Player Score: " + +playerScore);
         console.log("AI Score: " + +computerScore);
-    }
+}
 
+function paper() {
+    playerSelection = choices[1]
+    let computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    console.log("Player Score: " + +playerScore);
+    console.log("AI Score: " + +computerScore);
+}
+
+function scissors() {
+    playerSelection = choices[2]
+    let computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    console.log("Player Score: " + +playerScore);
+    console.log("AI Score: " + +computerScore);
+}
+
+
+function checkWin() {
     if (playerScore === computerScore) {
         console.log("It was a draw");
         console.log("Player Score: " + +playerScore);
@@ -60,7 +72,4 @@ function game() {
         console.log("Player Score: " + +playerScore);
         console.log("AI Score: " + +computerScore);
     }
-
 }
-
-game()
