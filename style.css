@@ -1,0 +1,33 @@
+body {
+    background-color: gray;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+button {
+    background-color: white;
+    font-weight: bold;
+    border: none;
+    width: 90px;
+    height: 80px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #cccccc;
+}
+
+button:active {
+    border: solid 2px #50a1ff;
+}
+
+div {
+    font-size: large;
+    font-weight: bolder;
+}
