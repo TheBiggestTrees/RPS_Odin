@@ -1,5 +1,4 @@
 let choices = ["Rock", "Paper", "Scissors"];
-let round = 1;
 let playerScore = 0;
 let computerScore = 0;
 
@@ -11,6 +10,10 @@ const enemyScore = document.createElement('div');
 
 const div = document.createElement('div');
     container.appendChild(div);
+
+const rockS = document.querySelector('[class=rock]')
+const paperS = document.querySelector('[class=paper]')
+const scissorsS = document.querySelector('[class=scissors]')
 
 function getComputerChoice() { 
     let computer = choices[(Math.floor(Math.random() * choices.length))];
@@ -48,6 +51,11 @@ function rock() {
     playRound(playerSelection, computerSelection);
     myScore.textContent = "Player Score: " + +playerScore;
     enemyScore.textContent = "AI Score: " + +computerScore;
+    if (computerScore >= 5) {
+        checkWin();
+    } else if (playerScore >= 5) {
+        checkWin();
+    };
 }
 
 function paper() {
@@ -56,6 +64,11 @@ function paper() {
     playRound(playerSelection, computerSelection);
     myScore.textContent = "Player Score: " + +playerScore;
     enemyScore.textContent = "AI Score: " + +computerScore;
+    if (computerScore >= 5) {
+        checkWin();
+    } else if (playerScore >= 5) {
+        checkWin();
+    };
 }
 
 function scissors() {
@@ -64,20 +77,30 @@ function scissors() {
     playRound(playerSelection, computerSelection);
     myScore.textContent = "Player Score: " + +playerScore;
     enemyScore.textContent = "AI Score: " + +computerScore;
+    if (computerScore >= 5) {
+        checkWin();
+    } else if (playerScore >= 5) {
+        checkWin();
+    };
 }
 
 function checkWin() {
     if (playerScore === computerScore) {
-        console.log("It was a draw");
-        console.log("Player Score: " + +playerScore);
-        console.log("AI Score: " + +computerScore);
+        div.textContent = "It was a draw, refresh to play again!";
+        rockS.disabled = true;
+        paperS.disabled = true;
+        scissorsS.disabled = true;
     } else if (playerScore > computerScore) {
-        console.log("You won the game!");
-        console.log("Player Score: " + +playerScore);
-        console.log("AI Score: " + +computerScore);
+        div.textContent = "You won the game, refresh to play again!";
+        rockS.disabled = true;
+        paperS.disabled = true;
+        scissorsS.disabled = true;
+
     } else if (playerScore < computerScore) {
-        console.log("Oh sheesh. Better luck next time.");
-        console.log("Player Score: " + +playerScore);
-        console.log("AI Score: " + +computerScore);
+        div.textContent = "Oh sheesh. Better luck next time, refresh to play again!";
+        rockS.disabled = true;
+        paperS.disabled = true;
+        scissorsS.disabled = true;
+
     }
 }
